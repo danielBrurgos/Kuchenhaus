@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Details - Kuchenhaus</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/uicons-regular-rounded/css/uicons-regular-rounded.css'>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="menu.html">Menu</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <div class="nav-icons">
+            <a href="cart.html"><i class="fi-rr-shopping-cart"></i></a>
+            <a href="search.html"><i class="fi fi-rr-search"></i></a>
+        </div>
+    </nav>
+
+    <section class="product-details-section">
+        <div class="product-details-container">
+            
+            <div class="main-image-container">
+                <img src="" alt="Product Image" id="main-product-image">
+            </div>
+
+            <div class="product-info-panel">
+                <div class="product-header-row">
+                    <h1 class="details-title" id="product-title">Loading...</h1>
+                    <h2 class="details-price" id="product-price">...</h2>
+                </div>
+                <p class="details-desc" id="product-description"></p>
+
+                <div class="selector-group">
+                    <span class="selector-label">SIZE:</span>
+                    <div class="selector-options size-options">
+                        <button class="option-btn active" data-size="individual">Individual</button>
+                        <button class="option-btn" data-size="medium">Medium (6 people)</button>
+                        <button class="option-btn" data-size="large">Large (12 people)</button>
+                    </div>
+                </div>
+
+                <div class="selector-group">
+                    <span class="selector-label">FLAVOR NOTE:</span>
+                    <div class="selector-options flavor-options">
+                        <button class="option-btn active">Classic</button>
+                        <button class="option-btn">Extra Chocolate</button>
+                    </div>
+                </div>
+
+                <div class="selector-group">
+                    <span class="selector-label">QUANTITY:</span>
+                    <div class="quantity-selector-box">
+                        <button class="qty-btn" id="qty-minus">-</button>
+                        <input type="number" id="qty-input" value="1" min="1" readonly>
+                        <button class="qty-btn" id="qty-plus">+</button>
+                    </div>
+                </div>
+
+                <button class="add-to-cart-large-btn">ADD TO ORDER</button>
+
+            </div>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
