@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Cart - Kuchenhaus</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="menu.html">Menu</a></li>
+        </ul>
+        <div class="nav-icons">
+            <span id="user-name-display" style="color: #C5A059;"></span>
+            <a href="cart.html" style="color: #C5A059;">Cart (<span id="cart-count">0</span>)</a>
+        </div>
+    </nav>
+
+    <section class="product-details-section">
+        <h1 class="details-title" style="text-align: center; margin-bottom: 40px;">Shopping Cart</h1>
+        
+        <div id="cart-items-container" class="product-details-container" style="display: block; max-width: 800px;">
+            </div>
+
+        <div style="max-width: 800px; margin: 40px auto; border-top: 1px solid #333; padding-top: 20px; text-align: right;">
+            <h2 class="details-price">Total: <span id="cart-total">$0.00</span></h2>
+            <button class="add-to-cart-large-btn" style="width: auto; padding: 15px 50px;">Checkout Now</button>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="script.js"></script>
+    
+    <script>
+        fetch('footer.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('footer-placeholder').innerHTML = data;
+            });
+    </script>
+</body>
+</html>

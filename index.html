@@ -3,13 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kuchenhaus</title>
+    <title>Kuchenhaus - Bakery</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     
     <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/uicons-regular-rounded/css/uicons-regular-rounded.css'>
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/uicons-solid-rounded/css/uicons-solid-rounded.css'>
 
     <link rel="stylesheet" href="style.css">
 </head>
@@ -24,6 +25,11 @@
         </ul>
         
         <div class="nav-icons">
+            <div class="user-session">
+                <span id="user-name-display" style="color: #C5A059; font-weight: 600;"></span>
+                <a href="#" id="logout-btn" style="color: #ff4757; font-size: 0.7rem; margin-left: 10px; text-decoration: none; border: 1px solid #ff4757; padding: 2px 5px; border-radius: 3px;">LOGOUT</a>
+            </div>
+            
             <a href="cart.html"><i class="fi-rr-shopping-cart"></i></a>
             <a href="search.html"><i class="fi fi-rr-search"></i></a>
         </div>
@@ -35,13 +41,19 @@
     </div>
 
     <section class="signature-pastries">
-        
         <div class="signature-title-container">
             <h2 class="signature-title">Most Popular</h2>
         </div>
 
-        <div class="products-grid">
+        <div class="filters-container">
+            <button class="filter-btn active" data-filter="all">All</button>
+            <button class="filter-btn" data-filter="pasteles">Cakes</button>
+            <button class="filter-btn" data-filter="donas">Doughnuts</button>
+            <button class="filter-btn" data-filter="strudel">Strudels</button>
+            <button class="filter-btn" data-filter="favs" id="show-favs">❤️ My Favorites</button>
+        </div>
 
+        <div class="products-grid">
             <div class="product-card">
                 <img src="images/Schwarzwälder_Kirsch.png" alt="Schwarzwälder Kirsch" class="product-image">
                 <h3 class="product-name">Schwarzwälder Kirsch</h3>
@@ -74,10 +86,19 @@
                     <button class="icon-btn"><i class="fi fi-rr-heart"></i></button>
                 </div>
             </div>
-
         </div>
-
     </section>
 
+    <div id="footer-placeholder"></div>
+
+    <script src="script.js"></script>
+    
+    <script>
+        fetch('footer.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('footer-placeholder').innerHTML = data;
+            });
+    </script>
 </body>
 </html>

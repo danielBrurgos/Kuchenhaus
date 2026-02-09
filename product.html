@@ -72,5 +72,18 @@
     </section>
 
     <script src="script.js"></script>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="script.js"></script>
+    
+    <script>
+        fetch('footer.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('footer-placeholder').innerHTML = data;
+            });
+    </script>
 </body>
+
 </html>

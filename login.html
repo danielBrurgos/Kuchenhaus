@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Kuchenhaus</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .login-section {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #1C1C1C;
+        }
+        .login-card {
+            background-color: #252525;
+            padding: 40px;
+            border-radius: 8px;
+            width: 100%;
+            max-width: 400px;
+            text-align: center;
+            border: 1px solid #333;
+        }
+        .login-card h2 {
+            font-family: 'Playfair Display', serif;
+            color: #C5A059;
+            text-transform: uppercase;
+            margin-bottom: 30px;
+        }
+        .login-card input {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 20px;
+            background: #1C1C1C;
+            border: 1px solid #C5A059;
+            color: white;
+            font-family: 'Poppins', sans-serif;
+            box-sizing: border-box;
+        }
+        .login-btn {
+            width: 100%;
+            padding: 12px;
+            background-color: #C5A059;
+            color: #1C1C1C;
+            border: none;
+            font-weight: 700;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        .login-btn:hover {
+            background-color: #b38f4d;
+        }
+    </style>
+</head>
+<body>
+
+    <section class="login-section">
+        <div class="login-card">
+            <h2>Sign In</h2>
+            <form id="login-form">
+                <input type="text" id="username" placeholder="Enter your name..." required>
+                <button type="submit" class="login-btn">Enter Store</button>
+            </form>
+        </div>
+    </section>
+
+    <script>
+        document.getElementById('login-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const user = document.getElementById('username').value.trim();
+            
+            if (user) {
+                // Guardamos el usuario actual
+                localStorage.setItem('currentUser', user);
+                
+                // Si el usuario no tiene una lista de favoritos, se la creamos vacía
+                if (!localStorage.getItem(`favs_${user}`)) {
+                    localStorage.setItem(`favs_${user}`, JSON.stringify([]));
+                }
+                
+                // Redirigir a la tienda
+                window.location.href = 'index.html';
+            }
+        });
+    </script>
+</body>
+</html>
